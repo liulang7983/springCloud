@@ -13,6 +13,7 @@
         <module>cloud-api-commons</module>
         <module>eurekaProducer</module>
         <module>eurekaConsumer</module>
+        <module>htmlBoot</module>
     </modules>
 
     <properties>
