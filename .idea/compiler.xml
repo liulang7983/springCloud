@@ -8,11 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="htmlBoot" />
+        <module name="jvmBoot" />
         <module name="eurekaProducer" />
         <module name="eurekaConsumer" />
         <module name="eurekaServer" />
         <module name="cloud-api-commons" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jvmBoot" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
