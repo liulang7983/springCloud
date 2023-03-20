@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <!--
+link的引入和内部样式style没有优先级高低，谁在下面谁覆盖上面的
+link的也叫链接式
+-->
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    h1{
+      color: green;
+    }
+    /*导入式*/
+    @import url("../css/style.css");
+  </style>
+
+</head>
+<body>
+<!--
+行内样式:在标签元素中，编写一个style属性，编写样式即可
+行内样式优先级最高，会覆盖内部样式和外部样式
+-->
+<h1 style="color: yellow">行内样式</h1>
+<h1 >行内样式</h1>
+</body>
+
+</html>

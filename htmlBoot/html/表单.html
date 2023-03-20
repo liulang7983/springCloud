@@ -34,6 +34,7 @@ input:
      hidden:隐藏
      placeholder:提示输入
      required:必输
+     pattern:正则校验
 -->
 <form action="demo1.html" method="get">
     <h1>登录</h1>
@@ -91,6 +92,12 @@ input:
     -->
     <p>数量：
         <input type="number" name="number" max="100" min="0" step="1">
+    </p>
+    <!--
+   正则校验
+   -->
+    <p>邮箱正则校验:
+        <input type="email" name="yemail" pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
     </p>
     <!--
     range：滑块
