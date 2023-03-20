@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层次选择器-通用选择器</title>
+  <style>
+    /*通用选择器 下面同级别的这个标签全部选择
+     样式为 .class ~ 标签{}
+     */
+    .style2 ~ p{
+      background: green;
+    }
+  </style>
+</head>
+<body>
+<p>p1</p>
+<p class="style2">p2</p>
+<p>p3</p>
+<ul>
+  <li>
+    <p>p4</p>
+  </li>
+  <li>
+    <p>p5</p>
+  </li>
+  <li>
+    <p>p6</p>
+  </li>
+</ul>
+<p>p7</p>
+<p>p8</p>
+</body>
+</html>
