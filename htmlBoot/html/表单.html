@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<!--
+action：表单提交的位置，可以是网站，也可以是一个请求处理地址
+method:请求处理方式
+       get：可以在url中看到提交信息，不安全，高效
+       post：比较安全，可提交大文件
+input:
+     type:类型,分为text,passwor等
+          text：文本框
+          password：密码框
+          radio:单选框(一组单选必须指的name，否则起不到单选的作用 value制定提交的值)checked是默认选中的意思
+          checkbox:多选框 checked是默认选中的意思
+          button:按钮，需要绑定事件啥的，
+          image:图片按钮，其效果和submit一致
+          submit:提交按钮
+          reset:重置按钮
+          file:上传文件
+          email:邮箱属性，其会校验输入是否带@
+          url:url校验是否是我网址
+          number:数字
+          search:搜索框和文本text差不多，只是输入后多了一个叉可以清理掉
+     name:表单提交后的名字
+     value:默认值
+     maxlength:输入框可输入最大长度
+     size：文本框长度
+     disabled:禁用置灰
+     readonly：只读不可输入
+     hidden:隐藏
+     placeholder:提示输入
+     required:必输
+-->
+<form action="demo1.html" method="get">
+    <h1>登录</h1>
+    <p>名称:<input type="text" name="username"  maxlength="12" placeholder="请输入名称" required></p>
+    <p>密码:<input type="password" name="pwd" hidden></p>
+    <p>性别:
+        <input type="radio" value="boy" name="sex" checked>男
+        <input type="radio" value="girl" name="sex">女
+    </p>
+    <p>爱好:
+        <input type="checkbox" value="sleep" name="hobby">睡觉
+        <input type="checkbox" value="code" name="hobby" checked>敲代码
+        <input type="checkbox" value="chat" name="hobby">聊
+        <input type="checkbox" value="game" name="hobby">游戏
+    </p>
+    <!--
+    select:是下拉框 name是属性名
+           option:value是属性的值，selected表示默认选中
+    -->
+    <p>下拉框：
+        <select name="select">
+            <option value="chain">中国</option>
+            <option value="nc" selected>南昌</option>
+        </select>
+    </p>
+    <!--
+    textarea:文本框
+           cols：长度
+           rows:高度
+           其默认内容为：我是人类
+    -->
+    <p>反馈：
+        <textarea name="textarea" cols="50" rows="10">我是人类</textarea>
+    </p>
+    <p>
+        <input type="file" name="files">
+    </p>
+   <!--
+   邮箱会校验是否带@
+   -->
+    <p>邮箱:
+        <input type="email" name="email">
+    </p>
+    <!--
+    链接会校验是否是链接
+    -->
+    <p>url:
+        <input type="url" name="url">
+    </p>
+    <!--
+    number：自能输入数字
+            max：最大值
+            min:最小值
+            step:上下按钮每次新增多少
+    -->
+    <p>数量：
+        <input type="number" name="number" max="100" min="0" step="1">
+    </p>
+    <!--
+    range：滑块
+            max：最大值
+            min:最小值
+            其实就是一个类似于音量的
+    -->
+    <p>音量：
+        <input type="range" name="range" max="1000" min="0" >
+    </p>
+    <p>搜索：
+        <input type="search" name="search" >
+    </p>
+    <p>
+        <label for="mark">点击锁定输入框</label>
+        <input type="text" name="id" id="mark">
+    </p>
+    <input type="button" value="点击">
+    <input type="image" src="../resources/image/1.png">
+    <p>
+        <input type="submit">
+        <input type="reset">
+    </p>
+</form>
+
+</body>
+</html>
