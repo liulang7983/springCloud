@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+  <style>
+    .demo a{
+      float: left;
+      display: block;
+      /*高宽*/
+      height: 50px;
+      width: 50px;
+      /*椭圆*/
+      border-radius: 10px;
+      background: aqua;
+      text-align: center;
+      color: gainsboro;
+      /*去下划线*/
+      text-decoration: none;
+      /*标签的间隔*/
+      margin-right: 5px;
+      /*字体居中*/
+      font: bold 20px/50px Arial;
+    }
+    /*a标签中存在id的元素 a[id]{}*/
+    a[id]{
+      background: yellow;
+    }
+    /*a标签中存在某id的元素,此元素的值 a[id=值]{}*/
+    p[id=sd]{
+      background: yellow;
+    }
+    /*a标签中存在class的元素,
+    绝对等于:class="links item first" 此时和id=值的类似
+    相对等于:class*="last" 此时是class中存在last
+    */
+    a[class="links item first"]{
+      background:rebeccapurple;
+    }
+    a[class*="last"]{
+      background: darkmagenta;
+    }
+    /*选中href中以ac开头的选中*/
+    a[href^=ac]{
+      background: darkseagreen;
+    }
+    /*选中href中以pdf结尾的选中*/
+    a[href$=pdf]{
+      background: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+<p class="demo">
+  <a href="http://www.baidu.com" class="links item first" id="first">1</a>
+  <a href="" class="links item active" target="_blank" title="test">2</a>
+  <a href="images/123.html" class="links item">3</a>
+  <a href="images/123.png" class="links item">4</a>
+  <a href="images/123.jpg" class="links item">5</a>
+  <a href="acbc" class="links item">6</a>
+  <a href="/a.pdf" class="links item">7</a>
+  <a href="/abc.pdf" class="links item">8</a>
+  <a href="abc.doc" class="links item last">9</a>
+  <a href="abcd.doc" class="links item last">9</a>
+</p>
+<br>
+<br>
+<p id="sd">我也带id</p>
+<p id="sn">我也带id</p>
+</body>
+</html>
