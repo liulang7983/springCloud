@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>超链接伪类</title>
+  <style>
+    a{
+      /*去掉下划线，并且默认为黑色*/
+      text-decoration: none;
+      color: #000000;
+    }
+    a:hover{
+      /*鼠标移入变为状态*/
+      color: red;
+      font-size: 30px;
+    }
+    a:active{
+      /*鼠标按住不松的状态*/
+      color: green;
+    }
+    #price{
+        /*阴影颜色 水平偏移 垂直便宜 阴影半径*/
+        text-shadow: #276fff 40px 40px 1px;
+    }
+  </style>
+</head>
+<body>
+<a href="#">
+  <img src="image/a.png" alt="">
+</a>
+<p>
+  <a href="#">码出高效，java手册</a>
+</p>
+<p>
+  <a href="#">作者：孤尽老师</a>
+</p>
+<p id="price">
+  ￥99
+</p>
+</body>
+</html>
