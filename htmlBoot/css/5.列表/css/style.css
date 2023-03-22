@@ -1,0 +1,38 @@
+#nvs{
+    /*标签宽度*/
+    width: 500px;
+    background: beige;
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    text-indent: 1em;
+    line-height: 30px;
+    background: red;
+}
+ul{
+    background: beige;
+}
+ul li{
+    /*行高*/
+    height: 30px;
+    /*list-style
+    none:去掉圆点和数字
+    circle:空心圆
+    decimals:有序列表
+    square:正方形
+    */
+    list-style: none;
+    text-indent: 1em;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+    color: aqua;
+}
+a:hover{
+    color: chocolate;
+    text-decoration: underline;
+}
+
+
