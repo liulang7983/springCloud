@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+  <style>
+    div{
+      width: 1000px;
+      height: 700px;
+      /*
+      边框
+      1px:边框的粗细
+      solid：边框的样式(实线)
+      deepskyblue：边框的颜色
+      */
+      border: 1px solid deepskyblue;
+      background-image: url("image/1.webp");
+    /*默认是全部平铺repeat    */
+    }
+    .div1{
+        /*水平平铺，意思就是左右填满，上下我不管，我只有一行*/
+        background-repeat: repeat-x;
+    }
+
+    .div2{
+        /*上下平铺，我只管上下铺满，水平我只有一竖*/
+        background-repeat: repeat-y;
+    }
+    .div3{
+        /*不平铺就只有左上角一张*/
+        background-repeat: no-repeat;
+    }
+  </style>
+</head>
+<body>
+<div class="div1">1</div>
+<div class="div2"></div>
+<div class="div3"></div>
+
+</body>
+</html>

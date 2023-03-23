@@ -8,7 +8,8 @@
     font-weight: bold;
     text-indent: 1em;
     line-height: 30px;
-    background: red;
+    /*背景颜色 背景图片 背景图片横向移动具体 纵向移动距离 不平铺*/
+    background: red url("../image/下.png") 490px 10px no-repeat;
 }
 ul{
     background: beige;
@@ -24,11 +25,17 @@ ul li{
     */
     list-style: none;
     text-indent: 1em;
+    /*背景图片*/
+    background-image: url("../image/右.jpg");
+    /*是否平铺*/
+    background-repeat: no-repeat;
+    /*图片距离*/
+    background-position: 440px 10px;
 }
 a{
     text-decoration: none;
     font-size: 14px;
-    color: aqua;
+    color: blue;
 }
 a:hover{
     color: chocolate;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标事件</title>
+    <script type="text/javascript">
+        function changeIn(widget){
+            // 修改widget的css属性background-color
+            widget.style.backgroundColor="#fcc";
+        }
+        function changeOut(widget){
+            // 修改widget的css属性background-color
+            widget.style.backgroundColor="#fff";
+        }
+    </script>
+</head>
+<body>
+<select name="opt" p onmouseover="changeIn(this)" onmouseout="changeOut(this)">
+    <option value="sh">上海</option>
+    <option value="bj">北京</option>
+    <option value="nj">南京</option>
+</select>
+<br>
+<span onmouseover="changeIn(this)" onmouseout="changeOut(this)">我是span</span>
+
+</body>
+</html>
