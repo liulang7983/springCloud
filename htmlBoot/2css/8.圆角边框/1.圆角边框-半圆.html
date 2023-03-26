@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>半圆</title>
+    <style>
+        .div1{
+            width: 300px;
+            height: 150px;
+            border: 1px solid red;
+            /*圆角边框
+            100px:四个角全部是100px
+            100px 50px:左上右下为100px,左下和右上为50px
+            当width=height=2border-radius则是一个圆形
+            */
+            border-radius: 150px 150px 0 0;
+        }
+
+        .div2{
+            width: 150px;
+            height: 300px;
+            border: 1px solid red;
+            /*圆角边框
+            100px:四个角全部是100px
+            100px 50px:左上右下为100px,左下和右上为50px
+            当width=height=2border-radius则是一个圆形
+            */
+            border-radius: 0 150px 150px 0 ;
+        }
+        .div3{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            /*圆角边框
+            100px:四个角全部是100px
+            100px 50px:左上右下为100px,左下和右上为50px
+            当width=height=2border-radius则是一个圆形
+            */
+            border-radius:  300px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+</body>
+</html>

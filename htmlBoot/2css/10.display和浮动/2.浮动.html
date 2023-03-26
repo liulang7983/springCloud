@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #father{
+      border: 1px #000000 solid;
+    }
+    .div1{
+      border: 1px dashed red;
+      display: inline-block;
+      float: left;
+    }
+    .div2{
+      border: 1px dashed green;
+      display: inline-block;
+      float: left;
+    }
+    .div3{
+      border: 1px dashed darkmagenta;
+      display: inline-block;
+      float: left;
+    }
+    .div4{
+      border: 1px dashed blue;
+      font-size: 12px;
+      line-height: 23px;
+      display: inline-block;
+      float: left;
+    }
+    div{
+        margin: 0;
+        padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="father">此时下面的虽然抱在father这个div里面，但是看边框其实是浮在father的下面的，他的边框只包含我这行文字，如果我不够一行则他会又是float: left则浮在我前面
+  <div class="div1"><img src="image/狂战士.png" alt=""></div>
+  <div class="div2"><img src="image/剑影.webp" alt=""></div>
+  <div class="div3"><img src="image/剑神.png" alt=""></div>
+  <div class="div4">浮动的盒子可以向左边浮动，也可以向右浮动，直到他的外边缘碰到包</div>
+</div>
+
+</body>
+</html>
