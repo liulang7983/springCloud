@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>overflow块级元素超出边框的处理方式</title>
+
+  <style>
+      #father{
+          border: 1px #000000 solid;
+      }
+      #father:after{
+          content: "";
+          display: block;
+          clear: both;
+      }
+      .div1{
+          border: 1px dashed red;
+          display: inline-block;
+          float: left;
+          /*clear: left;*/
+      }
+      .div2{
+          border: 1px dashed green;
+          display: inline-block;
+          float: left;
+          /*clear: left;*/
+      }
+      .div3{
+          border: 1px dashed darkmagenta;
+          display: inline-block;
+          float: right;
+          /*clear: right;*/
+      }
+      .div4{
+          border: 1px dashed blue;
+          font-size: 12px;
+          line-height: 23px;
+          display: inline-block;
+          float: right;
+          /*clear: both;*/
+      }
+      div{
+          margin: 10px;
+          padding: 10px;
+      }
+
+  </style>
+</head>
+<body>
+<div id="father">
+    <div class="div1"><img src="image/狂战士.png" alt=""></div>
+    <div class="div2"><img src="image/剑影.webp" alt=""></div>
+    <div class="div3"><img src="image/剑神.png" alt=""></div>
+    <div class="div4">浮动的盒子可以向左边浮动，也可以向右浮动，直到他的外边缘碰到包</div>
+</div>
+</body>
+</html>

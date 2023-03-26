@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index</title>
+  <style>
+    #content{
+      overflow: hidden;
+      font-size: 12px;
+      line-height: 25px;
+      border: 1px solid red;
+      width: 440px;
+    }
+    li{
+      list-style: none;
+    }
+    ul,li,div{
+      padding: 0;
+      margin: 0;
+    }
+    #content ul{
+      position: relative;
+    }
+    .tipText,.tipBg{
+      position: absolute;
+      height: 25px;
+      width: 440px;
+      top: 356px;
+    }
+    .tipBg{
+      background-color: black;
+      /*opacity: 0.5;*/
+      filter: alpha(opacity=50);
+    }
+    .tipText{
+      color: white;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+<div id="content">
+  <ul>
+    <li><img src="image/img.png" alt=""></li>
+    <li class="tipText">鬼剑士-剑神</li>
+    <li class="tipBg"></li>
+    <li>时间:2022-1-1</li>
+    <li>低点：宁波</li>
+  </ul>
+</div>
+</body>
+</html>
