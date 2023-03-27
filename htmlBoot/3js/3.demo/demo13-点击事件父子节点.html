@@ -50,10 +50,11 @@
 			var td = widget.parentNode;
 			// 得到所有的儿子
 			var children = td.childNodes;
-			
+			alert(td.getElementsByTagName("input")[1].value);
 			// 得到本来的数量
 			var count = parseInt(children[3].value);
-			
+			//也可以这样写
+			var count = parseInt(td.getElementsByTagName("input")[1].value);
 			children[3].value = count + 1;
 		}
 		
@@ -65,7 +66,8 @@
 			
 			// 得到本来的数量
 			var count = parseInt(children[3].value);
-			
+			//也可以这样写
+			var count = parseInt(td.getElementsByTagName("input")[1].value);
 			children[3].value = count - 1;
 		}
 		
