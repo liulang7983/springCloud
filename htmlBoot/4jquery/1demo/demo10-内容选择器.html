@@ -22,12 +22,12 @@
 		<div id="div6">王八</div>
 		<div>张三丰</div>
 		<div>
-			<font color="red">小李</font>
+			<span color="red">小李</span>
 		</div>
 		<div>张伟</div>
 		<div>小三</div>
 		<div>
-			<font color="green"></font>
+			<span color="green">小绿</span>
 		</div>
 		<div></div>
 	</body>
@@ -40,13 +40,13 @@
 			$("div:contains('张')").css("background-color", "#cfc");
 
 			// empty 里面没有任何内容
-			$("div:empty").css("background-color", "#cfc");
+			$("div:empty").css("background-color", "#cff");
 
 			// has
-			$("div:has('font')").css("background-color", "#cfc");
+			$("div:has('span')").css("background-color", "#2adbb1");
 
-			// parent
-			$("div:parent").css("background-color", "#cfc");
+			// parent 的优先级比has高或者是has的是标签选择器的优先级低，会刷掉上面的
+			//$("div:parent").css("background-color", "#cfc");
 			
 			
 		})
