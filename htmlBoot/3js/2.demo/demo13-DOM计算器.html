@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM计算器</title>
+	</head>
+	<body>
+		
+		<input id="input1" type="text" /><br />
+		<input type="button" value="计算" onclick="cal()" />
+		<br />
+		<div id="div1">
+			div内部显式的内容
+		</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		
+		function cal(){
+			// 获得input1控件
+			var input1 = document.getElementById("input1");
+			alert(input1.value);
+			var res = eval(input1.value);
+			alert(res);
+			// 获得div1
+			var div1 = document.getElementById("div1");
+			// 修改div中Text文本的值
+			div1.innerText = "<font color='red'>"+ res +"</font>";
+			
+		}
+		
+	</script>
+	
+</html>

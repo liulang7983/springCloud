@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM</title>
+	</head>
+	<body>
+	
+	<input type="button" value="点击跳转" onclick="jump()" />
+	
+	<script type="text/javascript">
+		document.write("<hr />");
+		// Navigator 
+		document.write(navigator.appName);
+		
+		// Screen
+		document.write("<hr />");
+		document.write("height: " + screen.height );
+		document.write("<br />");
+		document.write("width:" + screen.width);
+		
+		// Location
+		document.write("<hr />");
+		document.write(location.href);
+		
+		function jump(){
+			location.href="index.html";
+		}
+		
+		
+	</script>
+		
+	</body>
+</html>

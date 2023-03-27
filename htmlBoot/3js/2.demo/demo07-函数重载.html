@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>函数重载</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+//			function add(a,b,c){
+//				return a+b+c;
+//			}
+//			
+//			function add(a,b,c,d){
+//				return a+b+c+d;
+//			}
+//			
+//			function add(a,b){
+//				
+////				alert(arguments.length);
+//				for(var i = 0; i < arguments.length; i ++){
+//					alert(arguments[i]);
+//				}
+//
+//				
+//				return a+b;
+//			}
+
+			// 模拟方法重载
+			function add(){
+				var sum = 0;
+				for(var i = 0; i < arguments.length ; i++){
+					sum += arguments[i];
+				}
+				
+				return sum;
+				
+			}
+
+			
+			alert(add(3,4));
+			alert(add(3,4,5));
+			alert(add(3,4,5,6));
+			
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Date对象</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 获取当前的时间
+			var date = new Date();
+			//输入格式;Mon Mar 27 2023 11:16:58 GMT+0800 (中国标准时间)
+			document.write(date);
+			
+			// toLocaleString()输入格式:2023/3/27 11:16:58
+			document.write("<hr />");
+			document.write(date.toLocaleString())
+			
+			// 获取当前的年
+			document.write("<hr />");
+			document.write("年：" + date.getFullYear())
+			
+			// 获取当前的月,月份需要+1就很奇怪
+			document.write("<hr />");
+			document.write("月：" + (date.getMonth() + 1))
+			
+			// 获取当前的星期几
+			document.write("<hr />");
+			document.write("星期：" + date.getDay());
+			
+			// 获取当前的日
+			document.write("<hr />");
+			document.write("日期：" + date.getDate());
+			
+			// 获取当前的小时
+			document.write("<hr />");
+			document.write("小时：" + date.getHours());
+			
+			// 获取当前的分钟
+			document.write("<hr />");
+			document.write("分钟；" + date.getMinutes());
+			
+			// 获取当前的秒
+			document.write("<hr />");
+			document.write("秒：" + date.getSeconds());
+
+			// 获取当前的时间戳
+			document.write("<hr />");
+			document.write("时间戳：" + date.getTime());
+			
+		</script>
+		
+	</body>
+</html>

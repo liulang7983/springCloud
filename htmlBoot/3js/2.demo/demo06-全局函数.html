@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全局函数</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			// eval()
+			var s = "alert('hello world!')";
+//			var res = eval(s);
+			
+			// encodeURI() 和 decodeURI()
+			document.write("<hr />");
+			var str = "测试中文abc123";
+			var encode = encodeURI(str);
+			document.write(encode);
+			document.write("<br />");
+			document.write(decodeURI(encode));
+			
+			// isNaN() - 是否不是数字
+			document.write("<hr />");
+			var a = 'zhangsan';
+			document.write(isNaN(a));
+			
+			// parseInt()
+			document.write("<hr />");
+			var s = "123";
+			document.write(parseInt(s)+1);
+			document.write("<hr />");
+			document.write(isNaN(parseInt(s)+1));
+		
+			
+			
+		</script>
+		
+	</body>
+</html>

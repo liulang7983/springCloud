@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自动刷新</title>
+	</head>
+	<body>
+		
+		<input type="button" value="stopInterval" onclick="stop1()" /><br />
+		<input type="button" value="stopTimeout" onclick="stop2()" /><br />
+		
+		
+		<script type="text/javascript">
+			
+			//每隔三秒弹一次，可用于页面自动刷新啥的
+			var iid = setInterval("alert(123)",3000);
+			//打开之后隔三秒弹一次，只谈一次
+			var tid = setTimeout("alert(321)", 3000);
+
+			//关闭每隔三秒弹一次
+			function stop1(){
+				clearInterval(iid);
+			}
+			//关闭打开之后隔三秒弹一次，只谈一次
+			function stop2(){
+				clearTimeout(tid);
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>
