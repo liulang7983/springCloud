@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全局变量</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 全局变量
+			var aa = 10;
+			
+			function test1(){
+				alert("方法内使用：" + aa);
+			}
+			
+			test1();
+			alert("方法外使用：" + aa);
+		</script>
+		
+		<script type="text/javascript">
+			
+			alert("在另一个Script标签中：" + aa);
+
+		</script>
+		
+	</body>
+</html>

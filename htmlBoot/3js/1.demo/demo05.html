@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>运算符</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			var num = 123;
+			alert(num/1000*1000);
+			// js中是不区分整数和小数的 123/1000 = 0.123
+			
+			// 字符串操作
+			var str = "456";
+			alert(str + 1);	// 4561
+			alert(str - 1);	// 455 实际做的是减法运算
+			alert("abc" - 1);	// NaN 说明你运算的不是一个数字
+
+			// 布尔值的运算
+			var flag = false;
+			alert(flag + 1);
+			
+			var flag = true;
+			alert(flag + 1);
+
+			// == 和 ===
+			var a = "5";
+			if( a === "5"){
+				alert("===");
+			}
+			
+			
+			
+		</script>		
+		
+	</body>
+</html>

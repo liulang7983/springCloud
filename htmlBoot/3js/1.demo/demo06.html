@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>乘法表</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 向页面输出html代码
+//			document.write("<font color='red'>aaa</font>");
+			
+			// 九九乘法表
+			document.write("<table>");
+			for(var i = 1; i < 10; i++){
+				document.write("<tr>");
+				for(var j = 1; j <= i; j++){
+					document.write("<td style='border: 1px solid black; background-color: rgb("+ 25*i +"," +25*j +"," + 3*i*j+");'>");
+					document.write(j + "*" + i + "=" + j*i + "\t");
+					document.write("</td>");
+				}
+				document.write("</tr>");
+			}
+			document.write("</table>");
+			
+			
+		</script>
+		
+	</body>
+</html>

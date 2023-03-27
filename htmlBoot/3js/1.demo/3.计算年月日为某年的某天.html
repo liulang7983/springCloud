@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算年月日为某年的某天</title>
+  <script>
+    var year=parseInt(prompt("请输入年份"));
+    var month=parseInt(prompt("请输入月份"));
+    var day=parseInt(prompt("请输入日"));
+    alert(year+"年"+month+"月"+day+"日是本年的第"+dayFoYear(year,month,day)+"天");
+    function dayFoYear(year,month,day){
+      for (let i = 1; i < month; i++) {
+        day+=monthToDay(year,i);
+      }
+      return day;
+    }
+    function monthToDay(year,month){
+      var d=0;
+      switch (month){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          d=31;
+          break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          d=30;
+          break;
+        case 2:
+          if (year%4==0&&year%100!=0||year%400==0){
+            d=29;
+          }else {
+            d=28;
+          }
+          break;
+        default:
+          d=0;
+          break;
+      }
+      return d;
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

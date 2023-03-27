@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算某年某月某日是该年的第几天</title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 定义js函数，计算某年某月某日是该年的第几天
+			var year = parseInt(prompt("请输入年"));
+			var month = parseInt(prompt("请输入月"));
+			var day = parseInt(prompt("请输入日"));
+			
+			
+			alert(year + "年" + month + "月" + day  + "日是第" + dayOfYear(year,month, day) + "天！");
+			
+			function dayOfYear(year,month,day){
+				
+				var count = 0;
+				for(var i = 1; i < month; i++){
+					count += maxDayOfMonth(year, i);
+				}
+				count += day;
+				return count;
+			}
+			
+			function maxDayOfMonth(year, month){
+				var day = 0;
+				switch (month){
+					case 1:
+					case 3:
+					case 5:
+					case 7:
+					case 8:
+					case 10:
+					case 12:
+						day = 31;
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						day = 30;
+						break;
+					case 2:
+						if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+							day = 29;
+						}else{
+							day = 28;
+						}
+						break;
+					default:
+						day = 0;
+						break;
+				}
+				return day;
+			}
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

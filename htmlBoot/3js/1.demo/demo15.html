@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<script type="text/javascript">
+			// 定义js函数，判断一个数是不是质数
+			
+			var num = prompt("输入一个整数");
+			
+			if(isPrime(num)){
+				alert(num + "是素数！");
+			}else{
+				alert(num + "不是素数！");
+			}
+			
+			function isPrime(num){
+				
+				var isPrime = true;
+				for(var i = 2; i <= num/2 ;i++){
+					
+					if(num % i == 0){
+						isPrime = false;
+						break;
+					}
+				}
+				
+				isPrime = isPrime && num > 1;
+				
+				return isPrime;
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
