@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改事件</title>
+	</head>
+	<!--
+		1. 用js自动填充年月日中的值 
+		年 1900 - 今年
+		月 1 - 12
+		日 1 - 31
+		
+		2. 当用户选择完年份或月份时，重新计算天数
+	-->
+	<body>
+		
+		用户生日：
+		<select id="year" onchange="getDayByYearAndMonth()">
+			<!--<option>1900</option>-->
+		</select>年
+		
+		<select id="month" onchange="getDayByYearAndMonth()">
+			<!--<option>1</option>-->
+		</select>月
+
+		
+		<select id="day">
+			<!--<option>1</option>-->
+		</select>日
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		var year = document.getElementById("year");
+		var month = document.getElementById("month");
+		var day = document.getElementById("day");
+		
+		// 设置年份
+		var date = new Date();
+		for(var i = 1900; i <= date.getFullYear() ; i++){
+			year.innerHTML += "<option>"+ i + "</option>";
+		}
+		// 设置月份
+		for(var i = 1; i <= 12; i ++){
+			var opt = new Option(i,i);
+			month.add(opt);
+		}
+		
+		// 设置日期
+		getDayByYearAndMonth();		
+		
+		function getDayByYearAndMonth(){
+			// 清空内容
+			day.innerHTML = "";
+			
+			var y = year.value;
+			var m = parseInt(month.value);
+//			alert(y);
+//			alert(m);
+			var d = 1;
+			switch (m){
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					d = 31;
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					d = 30;
+					break;
+				case 2:
+					if(y % 4== 0 && y % 100 != 0 || y % 400 == 0){
+						d = 29;
+					}else{
+						d = 28;
+					}
+					break;
+				default:
+					break;
+			}
+			
+			// 把天数填入控件
+//			alert(d);
+			for(var i = 1; i <= d ; i++){
+				day.add(new Option(i,i));
+			}
+			
+		}
+		
+	</script>
+	
+</html>

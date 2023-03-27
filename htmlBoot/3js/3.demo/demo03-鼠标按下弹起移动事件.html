@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		<!--
+			
+			只有当鼠标在区域内按下时，才显示实时坐标
+			鼠标弹起时，坐标不再改变
+			
+		-->
+		<style type="text/css">
+			#div1 {
+				height: 300px;
+				width: 300px;
+				border: 1px solid black;
+				margin: 200px 0px 0px 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="div1" onmousedown="down()" onmouseup="up()" onmousemove="move()">
+
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		// 全局变量
+		var isDown = false;
+
+		function down() {
+			isDown = true;
+		}
+
+		function up() {
+			isDown = false;
+		}
+		//按下移动
+		function move() {
+			if(isDown) {
+				var x = event.clientX;
+				var y = event.clientY;
+
+				var div1 = document.getElementById("div1");
+				div1.innerText = "x = " + x + " y = " + y;
+			}
+
+		}
+	</script>
+
+</html>

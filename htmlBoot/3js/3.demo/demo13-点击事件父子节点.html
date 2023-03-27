@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车 - 父子节点</title>
+	</head>
+	<body>
+		
+		<table border="1px" cellspacing="" cellpadding="">
+			<tr>
+				<td>商品编号</td>
+				<td>商品名称</td>
+				<td>商品单价</td>
+				<td>商品数量</td>
+				<td>小计金额</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>苹果</td>
+				<td>2</td>
+				<td>
+					<input type="button" value="-" onclick="sub(this)"/>
+					<input type="text" size="1" value="0" />
+					<input type="button" value="+" onclick="add(this)" />
+				</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>香蕉</td>
+				<td>5</td>
+				<td>
+					<input type="button" value="-" />
+					<input type="text" size="1" value="0" />
+					<input type="button" value="+" />
+				</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td colspan="5" align="right">总价：XX元</td>
+			</tr>
+		</table>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		function add(widget){
+			// 获得父亲 td
+			var td = widget.parentNode;
+			// 得到所有的儿子
+			var children = td.childNodes;
+			
+			// 得到本来的数量
+			var count = parseInt(children[3].value);
+			
+			children[3].value = count + 1;
+		}
+		
+		function sub(widget){
+			// 获得父亲 td
+			var td = widget.parentNode;
+			// 得到所有的儿子
+			var children = td.childNodes;
+			
+			// 得到本来的数量
+			var count = parseInt(children[3].value);
+			
+			children[3].value = count - 1;
+		}
+		
+	</script>
+	
+</html>

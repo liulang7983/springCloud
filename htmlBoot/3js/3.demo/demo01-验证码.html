@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>验证码</title>
+		<style type="text/css">
+			#span1{
+				/*鼠标经过有点击小手样式*/
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		
+		验证码：<span id="span1" onclick="getCode()"></span>
+		<input id="input1" type="text" /><br />
+		<input type="button" id="btnLogin" value="登录" onclick="check()"/><br />
+		
+	</body>
+	
+	<script type="text/javascript">
+		// 一进入js，就要生成一次验证码
+		getCode();
+		//eval会计算其中的值
+		alert(eval("3-4"));
+		
+		function getCode(){
+			// 获得span1控件
+			var span1 = document.getElementById("span1");
+			// 生成2个随机数 1-9
+			var num1 = getRan(1,10);
+			var num2 = getRan(1,10);
+			// 生成符号
+			var opt = getRan(1,4);
+			switch(opt){
+				case 1:
+					span1.innerText = num1 + " + " + num2 + " = ?"; 
+					break;
+				case 2:
+					span1.innerText = num1 + " - " + num2 + " = ?"; 
+					break;
+				case 3:
+					span1.innerText = num1 + " * " + num2 + " = ?"; 
+					break;
+				
+			}
+			
+		}
+		
+		function check(){
+			// 获得span1控件
+			var span1 = document.getElementById("span1");
+			var inputValue = document.getElementById("input1").value;
+			var exp = span1.innerText.substr(0, span1.innerText.length - 4);
+			if(inputValue == eval(exp)){
+				alert("验证通过！")
+			}else{
+				alert("验证码输入错误！")
+			}
+			
+		}
+		
+		// 生成指定范围内的随机整数
+		// [small, big)
+		function getRan(small, big){
+			return Math.floor(Math.random() * (big-small)+small);
+		}
+		
+	</script>
+</html>

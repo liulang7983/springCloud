@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片滚动效果</title>
+		<!--
+			鼠标移进去时，停止滚动
+			鼠标移开时，继续滚动
+		-->
+		<style type="text/css">
+			#big{
+				width: 282px;
+				height: 412px;
+				overflow: hidden;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<div id="big" onmouseover="stop1()" onmouseout="start1()">
+			<img src="img/gdimg1.jpg" /> 	<!-- 282 * 103 -->
+			<img src="img/gdimg2.jpg" />
+			<img src="img/gdimg3.jpg" />
+			<img src="img/gdimg4.jpg" />
+			<img src="img/gdimg1.jpg" /> 	<!-- 282 * 103 -->
+			<img src="img/gdimg2.jpg" />
+			<img src="img/gdimg3.jpg" />
+			<img src="img/gdimg4.jpg" />
+		</div>
+		
+		
+	</body>
+	
+	<script type="text/javascript">
+		var id;
+		start1();
+		
+		function stop1(){
+			clearInterval(id);
+		}
+		
+		function start1(){
+			stop1();
+			id = window.setInterval(scroll, 50);
+		}
+		
+		
+		function scroll(){
+			var big = document.getElementById("big");
+			big.scrollTop += 2;
+		
+			if(big.scrollTop == 412){
+				big.scrollTop = 0;
+			}
+		}
+		
+		
+		
+	</script>
+	
+</html>

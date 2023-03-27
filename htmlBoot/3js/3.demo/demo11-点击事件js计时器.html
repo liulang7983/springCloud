@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js计时器</title>
+	</head>
+	<body>
+		
+		时间：<input id="time" type="text" /><br />
+		
+		<input type="button" value="暂停" onclick="stop1()"/>
+		<input type="button" value="继续" onclick="start1()"/><br />
+	</body>
+	<script type="text/javascript">
+		
+		var id;
+		
+		function stop1(){
+			clearInterval(id);	
+		}
+		
+		
+		function start1(){
+			// 每隔1秒就调用一次setTime
+			id = window.setInterval(setTime, 1000);
+		}
+		
+		function setTime(){
+			var time = document.getElementById("time");
+			
+			var date = new Date();
+			
+			time.value = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+			
+			
+		}
+		
+		
+	</script>
+</html>

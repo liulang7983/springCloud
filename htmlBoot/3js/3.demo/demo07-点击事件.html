@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点击事件</title>
+	</head>
+	<!--
+		1. 完成按钮的功能  prod1.jpg - prod15.jpg
+		2. 如果当前已经是最后一张了，点击下一张提示已经是最后一张了
+		3. 如果当前是第一张，点击上一张提示已经是第一张了
+	-->
+	<body>
+		
+		<img id="img1" src="img/prod1.jpg"/><br />
+		
+		<input type="button" value="上一张" onclick="back()"/>
+		<input type="button" value="下一张" onclick="next()"/>
+		
+	</body>
+	
+	<script type="text/javascript">
+		// 当前是第几张？
+		var index = 1;
+		
+		function back(){
+			if(index == 1){
+				alert("当前是第一张！");
+			}else{
+				index --;
+				document.getElementById("img1").src = "img/prod"+ index + ".jpg";
+			}
+		}
+		
+		function next(){
+			if(index == 15){
+				alert("当前已经是最后一张！");
+			}else{
+				index ++;
+				document.getElementById("img1").src = "img/prod"+ index+ ".jpg";
+			}
+		}
+		
+		
+	</script>
+	
+</html>

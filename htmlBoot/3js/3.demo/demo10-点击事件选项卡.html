@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选项卡</title>
+		<style type="text/css">
+			
+			div{
+				width: 298px;
+				border: 1px solid black;
+			}
+			
+			td{
+				background-color: #cfc;
+				cursor: pointer;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<table border="1px" width="300px">
+			<tr>
+				<td id="td1" onclick="showPage(1)">基本信息</td>
+				<td id="td2" onclick="showPage(2)">规格参数</td>
+				<td id="td3" onclick="showPage(3)">用户评价</td>
+			</tr>
+		</table>
+		
+		<div id="div1">基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息基本信息</div>
+		<div id="div2">规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数规格参数</div>
+		<div id="div3">用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价用户评价</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		hideAll();
+		function showPage(num){
+			hideAll();
+			// 显式需要显式的页面
+			eval("document.all.div" + num).style.display = "block";
+			eval("document.all.td" + num).style.backgroundColor = "#fcc"
+		}
+		function hideAll(){
+			for(var i = 1; i <= 3; i++){
+				//eval("document.all.div" + i).style.display = "none";
+				document.getElementById("div"+i).style.display="none";
+				eval("document.all.td" + i).style.backgroundColor = "#cfc"
+			}
+			
+		}
+		
+	</script>
+	
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标事件</title>
+		<style type="text/css">
+			
+			div{
+				height: 50px;
+				width: 200px;
+				background-color: #cfc;
+				text-align: center;
+				line-height: 50px;
+				float: left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div onmouseover="changeIn(this)" onmouseout="changeout(this)">首页</div>
+		<div onmouseover="changeIn(this)" onmouseout="changeout(this)">学校介绍</div>
+		<div onmouseover="changeIn(this)" onmouseout="changeout(this)">课程介绍</div>
+		<div onmouseover="changeIn(this)" onmouseout="changeout(this)">讲师介绍</div>
+		<div onmouseover="changeIn(this)" onmouseout="changeout(this)">联系我们</div>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		// 鼠标移入时
+		function changeIn(widget){
+			// 修改widget的css属性background-color
+			widget.style.backgroundColor="#fcc";
+		}
+		
+		// 鼠标移出时
+		function changeout(widget){
+			widget.style.backgroundColor="#cfc";
+		}
+		
+	</script>
+</html>

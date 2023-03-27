@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>键盘弹起事件</title>
+	</head>
+	<!--
+		在用户输入用户名的同时，检查用户名的合法性
+		如果小于6位，则在输入框右边 用红色字体提示 长度不能小于6位
+		如果大于12位，则在输入框右边 用红色字体提示 长度不能大于12位
+		
+		如果长度准确，则用绿色字体提示，用户名正确
+		
+	-->
+	<body>
+		
+		用户名：<input id="uname" type="text" onkeyup="checkUname()"/>
+		<span id="span1"></span>
+		
+	</body>
+	
+	<script type="text/javascript">
+		
+		function checkUname(){
+			// 获得用户名
+			var uname = document.getElementById("uname").value;
+			// 获得span控件
+			var span1=document.getElementById("span1");
+			if(uname.length < 6){
+				span1.innerHTML = "<font color='red'>" + "长度不能小于6位" + "</font>";
+			}else if(uname.length > 12){
+				span1.innerHTML = "<font color='red'>" + "长度不能大于12位" + "</font>";
+			}else{
+				span1.innerHTML = "<font color='green'>" + "用户名正确" + "</font>";
+			}
+
+		}
+		
+	</script>
+	
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>进入离开输入框</title>
+	</head>
+	<body>
+		<!--
+			一开始提示用户输入用户名
+			当用户点击激活输入框时，如果里面的内容是 请输入用户名， 则清空内容
+			当用户离开输入框时，如果里面没有内容， 则重新显式 请输入用户名
+		-->
+	
+		用户名：<input id="uname" type="text" value="请输入用户名"  
+			onfocus="onFocus()" onblur="onBlur()"/><br />
+		密码：<input id="upwd" type="password"  /><br />
+		<input type="button"/>
+	
+	</body>
+	<script type="text/javascript">
+		function onFocus(){
+			var uname = document.getElementById("uname");
+			if(uname.value == "请输入用户名"){
+				uname.value = "";
+			}
+		}
+		function onBlur(){
+			var uname = document.getElementById("uname");
+			if(uname.value.length == 0){
+				uname.value = "请输入用户名";
+			}
+		}
+
+		
+	</script>
+	
+</html>
