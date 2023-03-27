@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>入口函数</title>
+	</head>
+	<body>
+		
+		<img src="http://img0.imgtn.bdimg.com/it/u=1058872485,296069625&fm=27&gp=0.jpg"/>
+		<img src="http://img5.imgtn.bdimg.com/it/u=2587288995,1730966454&fm=27&gp=0.jpg"/>
+		<img src="http://img1.imgtn.bdimg.com/it/u=3479549349,3801234770&fm=27&gp=0.jpg"/>
+		<img src="http://img2.imgtn.bdimg.com/it/u=1015671434,3157409406&fm=27&gp=0.jpg"/>
+		
+	</body>
+	
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		
+		// js的入口函数
+		window.onload = function(){
+			console.log("我是js的入口函数")
+		}
+		
+		$(document).ready(function(){
+			console.log("我是入口函数的第一个写法")
+		})
+		
+		$(function(){
+			console.log("我是入口函数的第二个写法")
+		})
+		
+		
+		
+		
+	</script>
+	
+</html>

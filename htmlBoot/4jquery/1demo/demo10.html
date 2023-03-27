@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>内容选择器</title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 30px;
+				border: 1px solid black;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div>张三</div>
+		<div>李四</div>
+		<div>王五</div>
+		<div>赵六</div>
+		<div>田七</div>
+		<div id="div6">王八</div>
+		<div>张三丰</div>
+		<div>
+			<font color="red">小李</font>
+		</div>
+		<div>张伟</div>
+		<div>小三</div>
+		<div>
+			<font color="green"></font>
+		</div>
+		<div></div>
+	</body>
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			
+			// contains 包含
+			$("div:contains('张')").css("background-color", "#cfc");
+
+			// empty 里面没有任何内容
+			$("div:empty").css("background-color", "#cfc");
+
+			// has
+			$("div:has('font')").css("background-color", "#cfc");
+
+			// parent
+			$("div:parent").css("background-color", "#cfc");
+			
+			
+		})
+		
+		
+	</script>
+	
+</html>

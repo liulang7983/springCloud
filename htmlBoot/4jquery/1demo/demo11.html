@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>属性选择器</title>
+	</head>
+
+	<body>
+		<form>
+			账户名称：<input type="text" name="uname" /><br /> 账户密码：
+			<input type="password" name="upwd" /><br /> 再次输入密码：
+			<input type="password" name="upwd" /><br /> 用户昵称：
+			<input type="text" name="nickname" /><br /> 联系地址：
+			<input type="text" name="addr" /><br /> 联系电话：
+			<input type="text" name="tel" /><br /> 电子邮箱：
+			<input type="text" name="email" /><br /> 用户性别:
+			<input type="radio" name="gendar" value="male" /> 男
+			<input type="radio" name="gendar" value="female" /> 女
+			<input type="radio" name="gendar" value="secret" /> 保密
+			<br /><br /> 兴趣爱好:
+			<input type="checkbox" name="hobby" value="eat" /> 吃饭
+			<input type="checkbox" name="hobby" value="sleep" /> 睡觉
+			<input type="checkbox" name="hobby" value="coding" /> 写代码
+			<br /><br />
+			<input type="button" value="注册" />
+
+		</form>
+		<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 拥有value属性的标签
+				$("input[value]").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+
+				// 拥有type属性 = password 的标签
+				$("input[type='password']").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+				
+				// type属性不等于 password的标签
+				$("input[type!='password']").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+				
+				// 获取name属性的值是以u开头的标签
+				$("input[name^='u']").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+
+				// 获取name属性的值是以d结尾的标签
+				$("input[name$='d']").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+
+				// 获取name属性值包含e的标签
+				$("input[name*='e']").css({
+					"background-color": "#cfc",
+					"border": "3px solid red"
+				});
+
+			})
+		</script>
+
+	</body>
+
+</html>

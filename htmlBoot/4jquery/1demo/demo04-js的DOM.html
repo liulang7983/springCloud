@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js的DOM</title>
+	</head>
+	<body>
+		
+		<ul>
+			<li id="cloth">衣服</li>
+			<li>裤子</li>
+			<li>袜子</li>
+			<li>鞋子</li>
+		</ul>
+		
+	</body>
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 获得DOM对象
+		var cloth = document.getElementById("cloth");
+		cloth.style.backgroundColor = "pink";
+		
+		// 获得jquery对象
+		var $li = $("li");
+		// 设置css属性
+		$li.css("background-color","yellow");
+		
+		
+		// js对象能不能使用jquery对象的方法？
+//		var cloth = document.getElementById("cloth");
+//		cloth.text("呵呵");
+		
+		// jq对象能不能使用js对象的方法呢？
+		
+//		var arr = [
+//			{name:"zhangsan",
+//			say:function(){
+//				console.log("hehe");
+//			}}
+//		
+//		];
+//		
+//		arr[0].say();
+		$li[0].style.backgroundColor = "red";
+		
+		
+		// 如果我的dom对象一定要使用jq的方法怎么办？
+		$(cloth).text("hehe");
+		
+		// 如果jquery对象一定要使用dom的方法怎么办？
+		$li[3].style.color = "red";
+		
+	
+	</script>
+	
+</html>

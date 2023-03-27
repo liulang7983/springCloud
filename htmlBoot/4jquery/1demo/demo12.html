@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选器</title>
+		<style type="text/css">
+			ul{
+				float: left;
+			}
+			
+			li{
+				display: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			一级菜单1
+			<li>二级菜单11</li>
+			<li>二级菜单12</li>
+			<li>二级菜单13</li>
+		</ul>
+		<ul>
+			一级菜单2
+			<li>二级菜单21</li>
+			<li>二级菜单22</li>
+			<li>二级菜单23</li>
+		</ul>
+		<ul>
+			一级菜单3
+			<li>二级菜单31</li>
+			<li>二级菜单32</li>
+			<li>二级菜单33</li>
+		</ul>
+		
+	</body>
+	
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			$("ul").mouseover(function(){
+				$(this).children().show();
+//				$("li").show();
+			})
+			
+			$("ul").mouseout(function(){
+				$(this).children().hide();
+			})
+			
+			
+		})
+		
+		
+		
+	</script>
+	
+</html>

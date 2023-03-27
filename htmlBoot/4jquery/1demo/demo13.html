@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>突出显示</title>
+		<style type="text/css">
+			img{
+				 /*opacity 透明度  	1 - 完全不透明 0 - 完全透明*/
+				opacity:0.4;
+			}</style>
+	</head>
+	<body>
+		
+		<img src="img/prod1.jpg"/>
+		<img src="img/prod2.jpg"/>
+		<img src="img/prod3.jpg"/>
+		<br />
+		<img src="img/prod4.jpg"/>
+		<img src="img/prod5.jpg"/>
+		<img src="img/prod6.jpg"/>
+		
+	</body>
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(function(){
+			
+			$("img").mouseenter(function(){
+				$(this).css("opacity", "1").siblings().css("opacity", "0.4");
+				
+			})
+			
+			$("img").mouseleave(function(){
+				$(this).css("opacity", "0.4");
+			})
+			
+		})
+		
+		
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>$的本质</title>
+	</head>
+	<body>
+		
+	</body>
+	<script src="js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		 
+		// $的本质 - 函数 
+		// 写的时候一定要记得 $()
+		console.log(typeof($))
+		
+		// 1, 参数是一个function
+		$(function(){
+			// 入口函数
+		})
+		
+		// 2. 传dom对象 - 转成jq对象
+		$(document).ready(function(){
+			
+		})
+		
+		// 3. 传字符串 - 找对象
+		$("div")
+		
+		
+		
+	</script>
+	
+</html>

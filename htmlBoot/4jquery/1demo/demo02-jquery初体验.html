@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery初体验</title>
+
+		<style type="text/css">
+			div {
+				background-color: #cfc;
+				height: 200px;
+				margin-bottom: 10px;
+				display: none;
+			}
+		</style>
+		<!-- 1. 引入了jquery文件-->
+		<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			
+			// 2. 入口函数标准写法
+			$(document).ready(function(){
+				
+				// 注册事件 - 没有on的，注意是一个方法
+				$("#btn1").click(function(){
+					// 隐式迭代：偷偷地循环，不需要我手动编写for循环
+					// 轻松实现动画效果
+					$("div").show(1000);
+				})
+				
+				$("#btn2").click(function(){
+					$("div").text("我是内容");
+				})
+				
+			})
+			
+		</script>
+		
+	</head>
+
+	<body>
+
+		<input type="button" value="展示" id="btn1" />
+		<input type="button" value="设置内容" id="btn2" />
+
+		<div></div>
+		<div></div>
+		<div></div>
+
+	</body>
+
+</html>
