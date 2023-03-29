@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+  <script>
+    'use strict';
+    console.log("map")
+    var map=new Map([['tom',100],['jack',90]]);
+    //打印tom值
+    console.log(map.get('tom'));
+    //赋值
+    map.set('kk',100);
+    console.log(map);
+    //删除key
+    map.delete('jack');
+    console.log(map);
+
+    console.log("set");
+    var set=new Set([2,1,3,2,1]);
+    console.log(set);
+    //添加
+    set.add(5);
+    console.log(set);
+    //删除
+    set.delete(2);
+    console.log(set);
+    //是否存在
+    console.log(set.has(5));
+  </script>
+</head>
+<body>
+
+</body>
+</html>
