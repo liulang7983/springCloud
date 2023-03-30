@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>windows类型</title>
+  <script>
+    var  y='sss';
+    alert(y);
+    window.alert(y);
+    window.alert(window.y);
+    //此时old_alert方法了alert一样
+    var old_alert=window.alert;
+    old_alert("old_alert变为了window.alert");
+    //把系统的方法覆盖掉竟然成功了
+    window.alert=function (){
+
+    }
+    //不会打印
+    alert("ss");
+    //从新赋值回来
+    window.alert=old_alert;
+    window.alert('sssss');
+  </script>
+</head>
+<body>
+
+</body>
+</html>

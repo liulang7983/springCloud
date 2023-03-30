@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组遍历奇怪点</title>
+  <script>
+    'use strict';
+    var arr=[2,1,3,2,1];
+    console.log("打印添加前的arr");
+    for(var x in arr){
+      console.log('第'+x+'个元素:'+arr[x]);
+    }
+    arr.name="sdf";
+  console.log("打印添加后的arr");
+    for(var x in arr){
+      console.log('第'+x+'个元素:'+arr[x]);
+    }
+    // 此时会打印出’第name个元素:sdf‘，key变为name了
+
+
+    console.log("打印添加后的arr，使用of");
+    for(var x of arr){
+      console.log('of打印:'+x);
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

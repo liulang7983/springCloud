@@ -1,11 +1,14 @@
 package com.service.impl;
 
 import bean.CommonResult;
+import cn.hutool.core.codec.Base64Decoder;
 import com.service.FileService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import sun.misc.BASE64Decoder;
 
 import java.io.*;
+import java.util.Base64;
 
 /**
  * @author ming.li
@@ -25,8 +28,23 @@ public class FileServiceImpl implements FileService {
             e.printStackTrace();
         }
 
-        return new CommonResult(200, "写入成功");
+        return new CommonResult(200, "文件写入成功");
     }
+
+    @Override
+    public CommonResult base64(String base64) {
+        try {
+            byte[] bytes = new BASE64Decoder().decodeBuffer(base64);
+            FileOutputStream stream = new FileOutputStream(new File("D:\\李明\\租赁物\\租后排重\\base64.txt"));
+            stream.write(bytes);
+            stream.close();;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return new CommonResult(200, "base64转换文件成功");
+    }
+
     /**
      * 流写入文件
      *

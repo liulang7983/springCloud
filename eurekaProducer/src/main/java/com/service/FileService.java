@@ -14,4 +14,6 @@ import java.io.IOException;
 
 public interface FileService {
     CommonResult add(@RequestParam("file") MultipartFile file);
+
+    CommonResult base64(String base64);
 }

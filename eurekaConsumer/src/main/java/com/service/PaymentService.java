@@ -30,4 +30,9 @@ public interface PaymentService {
     @RequestMapping(value = "/file/add",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     CommonResult add(@RequestPart("file") MultipartFile file);
 
+    //微服务通过base64传输
+    @RequestMapping(value = "/file/base64")
+    CommonResult base64(@RequestParam("base64") String base64);
+
+
 }

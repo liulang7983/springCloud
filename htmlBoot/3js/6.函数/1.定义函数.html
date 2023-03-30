@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定义函数</title>
+  <script>
+      //定义方式一
+    function abs(a){
+      if (a>=0){
+        return a;
+      }else {
+        return -a;
+      }
+    }
+  //此时换行了他会给return加;代表结束了
+    function absFail(a){
+      if (a>=0){
+        return
+           a;
+      }else {
+        return -a;
+      }
+    }
+
+      //定义方式二
+      var sc=function(a){
+          if (a>=0){
+              return a;
+          }else {
+              return -a;
+          }
+      }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

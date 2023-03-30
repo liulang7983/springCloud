@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数-arguments</title>
+  <script>
+    //arguments
+    console.log("测试arguments")
+    function ass(x){
+      console.log("入参为:"+x);
+      var length=arguments.length;
+      console.log("实际长度:"+length);
+      for (let i = 0; i < arguments.length; i++) {
+        console.log(arguments[i]);
+      }
+    }
+
+    function restTest(x,...rest){
+      console.log("测试rest");
+      console.log("入参为:"+x);
+      var length=rest.length;
+      console.log("多余的实际长度:"+length);
+      for (let i = 0; i < rest.length; i++) {
+        console.log(rest[i]);
+      }
+    }
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

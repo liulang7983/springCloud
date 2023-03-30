@@ -26,4 +26,10 @@ public class FileController {
         System.out.println("我收到了文件");
         return fileService.add(file);
     }
+    @RequestMapping("base64")
+    public CommonResult base64(@RequestParam("base64")String base64){
+
+        System.out.println("我收到了base64文件:"+base64);
+        return fileService.base64(base64);
+    }
 }

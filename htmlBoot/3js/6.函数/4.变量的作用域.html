@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的作用域</title>
+  <script>
+    'use strict';
+    function test() {
+      let x = 1;
+      x=x+1;
+      var y=2;
+    }
+    //x=x+1;
+
+    function xb(){
+      var c=1;
+      function xb2(){
+        var b=c+1;
+      }
+      //var d=b+2;
+    }
+
+    function qj(){
+      var y=2;
+      function qj2(){
+        var y=3;
+        console.log("内部的qj2:"+y);
+
+      }
+      qj2()
+      console.log("外部的qj:"+y);
+    }
+    qj();
+    function xx() {
+      var x='x'+y;
+      console.log(x);
+      var y='y';
+    }
+    xx();
+
+    function xxx() {
+      var y;
+      var x='x'+y;
+      console.log(x);
+      y='y';
+    }
+    xxx();
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
