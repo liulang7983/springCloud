@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象</title>
+  <script>
+    var student={
+      name:'zs',
+      age:22,
+      run:function (){
+        //必须要加this
+        console.log(this.name+".run..");
+      }
+    }
+    var xiaoming={
+      name: 'xiaoming',
+      age: 23,
+    }
+    console.log('指向前调用run：');
+    //此时这个语句会报错
+    //xiaoming.run();
+    //此时相当于xiaoming的原型指向了了student，意思就是我可以使用student的方法
+    //向java里的继承
+    xiaoming.__proto__=student;
+    console.log('指向后调用run：');
+    xiaoming.run()
+  </script>
+</head>
+<body>
+
+</body>
+</html>

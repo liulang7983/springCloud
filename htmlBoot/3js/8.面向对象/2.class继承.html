@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class继承</title>
+    <script>
+        //之前的对象定义
+        function Student(name){
+            this.name=name;
+        }
+        //对象添加方法
+        Student.prototype.hello=function (){
+            console.log('hello');
+        }
+        var student=new Student('student');
+
+        //es6新增后的特性
+        class Teacher{
+            constructor(name) {
+                this.name=name;
+            }
+            //添加方法
+            hello(){
+                console.log("class hello:"+this.name);
+            }
+        }
+        var teacher=new Teacher('teacher');
+        class XiaoTeacher extends Teacher{
+            constructor(name,grade) {
+                super(name);
+            }
+            //此方法子类独有，父类不可使用
+            //但是子类可以说会用父类的hello方法
+            MyGrade(){
+                console.log("我是子类方法");
+            }
+        }
+        var xiaoTeacher=new XiaoTeacher('XiaoTeacher',33);
+        //查看方法可以知道还是使用的原型__proto__或者Prototype
+        console.log(xiaoTeacher);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

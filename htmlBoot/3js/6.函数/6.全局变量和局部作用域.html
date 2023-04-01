@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全局变量和局部作用域</title>
+  <script>
+    //定义全局变量
+    var liAPP={};
+    liAPP.name='liming';
+    liAPP.abs=function (a,b){
+      return a+b;
+    }
+    var aaa=function (){
+        for (let i = 0; i < 10; i++) {
+            console.log('let:'+i);
+        }
+        //此时出了作用域不会打印
+        console.log('let:'+i);
+        for (var i = 0; i < 10; i++) {
+            console.log('var:'+i);
+        }
+        //此时出了作用域还会打印
+        console.log('var:'+i);
+    }
+    aaa();
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

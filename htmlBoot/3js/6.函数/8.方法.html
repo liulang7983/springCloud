@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>方法</title>
+  <script>
+    var liA={
+      name:'zs',
+      bitrh:1995,
+      age:function (){
+        var now=new Date().getFullYear();
+        return now-this.bitrh;
+      }
+    }
+    function getAge(){
+      var now=new Date().getFullYear();
+      return now-this.bitrh;
+    }
+
+    var liB={
+      name:'zs',
+      bitrh:1995,
+      age:getAge
+    }
+    var s=getAge.apply(liB,[]);
+    console.log(s);
+  </script>
+</head>
+<body>
+
+</body>
+</html>
