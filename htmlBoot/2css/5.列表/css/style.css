@@ -9,7 +9,7 @@
     text-indent: 1em;
     line-height: 30px;
     /*背景颜色 背景图片 背景图片横向移动具体 纵向移动距离 不平铺*/
-    background: red url("../image/下.png") 490px 10px no-repeat;
+    background: red url("../image/下.png") 480px 10px no-repeat;
 }
 ul{
     background: beige;
@@ -38,6 +38,7 @@ a{
     color: blue;
 }
 a:hover{
+    /*放上去变色且出现下划线*/
     color: chocolate;
     text-decoration: underline;
 }
