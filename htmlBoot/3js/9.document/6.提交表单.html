@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提交表单</title>
+  <script src="../js/md5.js"></script>
+</head>
+<body>
+<!--添加onsubmit，此时aaa方法里面如果return的是false就不会提交-->
+<form action="https://www.baidu.com/" onsubmit="return aaa()">
+  <p>
+    用户名：<input type="text" id="username">
+  </p>
+  <p>
+    密码：<input type="text" id="pwd">
+  </p>
+
+<!--  <button onclick="aaa()">提交</button>-->
+  <input type="submit">
+
+</form>
+<script>
+  function aaa(){
+    var username=document.getElementById('username');
+    var pwd=document.getElementById('pwd');
+    console.log(username.value);
+    console.log(pwd.value);
+    //console.log(md5(pwd.value));
+    return true;
+  }
+
+</script>
+
+</body>
+</html>

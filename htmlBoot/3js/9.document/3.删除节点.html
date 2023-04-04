@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除节点</title>
+
+</head>
+<body>
+<div id="father">
+  <h1>标题一</h1>
+  <p id="p1">p1</p>
+  <p class="p2">p2</p>
+</div>
+
+<script>
+    //通过父节点删除子节点
+    var father=document.getElementById('father');
+    //此时是报错的
+    //father.removeChild('p1');
+    var p1=document.getElementById('p1');
+    father.removeChild(p1);
+    //此时删除第二个节点会报错，因为father.children是个动态的，前面删除了1节点，此时p2是1节点
+    father.removeChild(father.children[2]);
+</script>
+</body>
+</html>

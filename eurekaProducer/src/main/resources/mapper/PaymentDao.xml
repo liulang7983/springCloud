@@ -11,8 +11,8 @@
         insert into payment (serial) values (#{serial});
     </insert>
 
-    <select id="getId" resultType="bean.Payment" parameterType="Long" resultMap="ResultMap">
-        select * from payment  where id = #{id};
+    <select id="getId"  parameterType="java.lang.Long" resultMap="ResultMap">
+        select * from payment  where id = #{id,jdbcType=INTEGER};
     </select>
 
 

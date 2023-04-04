@@ -2,6 +2,7 @@ package com.dao;
 
 import bean.Payment;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author ming.li
@@ -10,5 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface PaymentDao {
     int create(Payment payment);
-    Payment getId(Long id);
+    Payment getId(@Param("id") Long id);
 }

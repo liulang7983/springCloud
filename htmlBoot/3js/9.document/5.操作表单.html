@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作表单</title>
+</head>
+<body>
+<form>
+  <p>
+    用户名：<input type="text" id="username" required>
+  </p>
+  <p>
+    <input type="text" id="pwd" required>
+  </p>
+  性别：<input type="radio" name="sex" value="man" id="boy">男
+  <input type="radio" name="sex" value="women" id="girl">女
+  <br>
+  <input type="submit">
+
+</form>
+<script>
+  var username=document.getElementById("username");
+  //赋值
+ // username.value='ss';
+  var boy=document.getElementById("boy");
+  var girl=document.getElementById('dirl');
+  //是否选中，为true选中
+  var flags=boy.checked;
+  console.log(flags);
+  boy.checked=true;
+</script>
+
+</body>
+</html>

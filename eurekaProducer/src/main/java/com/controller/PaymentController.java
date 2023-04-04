@@ -43,5 +43,12 @@ public class PaymentController {
         return new CommonResult(200, "查询成功", s);
     }
 
+    @RequestMapping("/getIdInt")
+        public CommonResult getIdInt(){
+        System.out.println("进入producer/getId");
+        Payment payment = paymentService.getId(null);
+        return new CommonResult(200, "查询成功", payment);
+    }
+
 
 }

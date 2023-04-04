@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加节点2</title>
+
+</head>
+<body>
+<p id="js">我是p标签</p>
+<div id="list">
+  <p id="java">java</p>
+  <p id="oracle">oracle</p>
+  <p id="mysql">mysql</p>
+</div>
+<script type="text/javascript">
+    var oracle=document.getElementById('oracle');
+    var list=document.getElementById('list');
+    var newP=document.createElement('p');
+    newP.setAttribute('id','newP');
+    newP.innerText='我是新建的p标签';
+    //在list标签下，我把newP插入到oracle标签前面
+    list.insertBefore(newP,oracle);
+
+</script>
+
+</body>
+</html>

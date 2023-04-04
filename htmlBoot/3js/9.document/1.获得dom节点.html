@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获得dom节点</title>
+  <script>
+    var h1=document.getElementsByTagName('h1');
+    var p1=document.getElementById('p1');
+    var p2=document.getElementsByClassName('p2');
+    console.log(h1);
+    console.log(p1);
+    console.log(p2);
+    var father=document.getElementById('father');
+    var nodes=father.children;
+    father.firstChild;
+    father.lastChild;
+  </script>
+</head>
+<body>
+<div id="father">
+  <h1>标题一</h1>
+  <p id="p1">p1</p>
+  <p class="p2">p2</p>
+</div>
+</body>
+</html>

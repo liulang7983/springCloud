@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加节点</title>
+
+</head>
+<body>
+<p id="js">我是p标签</p>
+<div id="list">
+  <p>java</p>
+  <p>oracle</p>
+  <p>mysql</p>
+</div>
+<script type="text/javascript">
+  var list=document.getElementById('list');
+  //此时是把div的所有都替换成sss
+  //list.innerText='sss';
+
+  //从页面f12可得，此时是直接把js到后面去了
+  var js=document.getElementById('js');
+  list.append(js);
+
+
+  //创建一个新的节点
+  var newP=document.createElement('p');
+  newP.id='newP';
+  newP.innerText='我是新建的';
+  list.append(newP);
+
+  var myScript=document.createElement('script');
+  //通用的添加属性方法
+  myScript.setAttribute('type','text/javascript"');
+  list.append(myScript);
+
+
+  //创建style标签,添加背景颜色
+    var myStyle=document.createElement('style');
+    myStyle.innerHTML='body{background-color: green}';
+    document.getElementsByTagName('head')[0].appendChild(myStyle);
+
+
+</script>
+
+</body>
+</html>
