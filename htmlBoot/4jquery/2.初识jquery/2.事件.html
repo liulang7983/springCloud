@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+  <script src="../jquery/jquery-3.6.4.js"></script>
+  <style>
+    #div1{
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<span id="span1"></span>
+<div id="div1">我是谁</div>
+</body>
+<script>
+  //加载完事件
+  // $(document).ready(function (){
+  //
+  // })
+  //简写
+  $(function (){
+    $('#div1').mousemove(function (e){
+      $('#div1').text('x:'+e.pageX+',y:'+e.pageY);
+    })
+  })
+
+</script>
+</html>

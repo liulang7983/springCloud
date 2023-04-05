@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏和显示</title>
+    <script src="../jquery/jquery-3.6.4.js"></script>
+    <style>
+        #div1{
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<button id="xs">显示</button>
+<button id="yc">隐藏</button>
+<div id="div1">我是div</div>
+
+</body>
+<script>
+    $('#xs').click(function (){
+        $('#div1').show();
+    });
+    $('#yc').click(function (){
+        $('#div1').hide();
+    })
+</script>
+</html>

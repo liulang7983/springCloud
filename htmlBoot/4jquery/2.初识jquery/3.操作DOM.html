@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作DOM</title>
+  <script src="../jquery/jquery-3.6.4.js"></script>
+</head>
+<body>
+<ul id="test-ul">
+  <li class="java">java</li>
+  <li name="oracle">oracle</li>
+</ul>
+<p class="p1">我是你爹</p>
+</body>
+<script>
+  //获得值
+  var oracle=$('#test-ul li[name=oracle]').text()
+  console.log(oracle);
+  //设置值
+  $('#test-ul li[name=oracle]').text('oracle1');
+  //获得他的html
+  var ht=$('#test-ul').html();
+  console.log(ht);
+  //设置他的html
+  $('#test-ul').html('<strong>222</strong>');
+  //设置css
+  $('.p1').css('color','red').css('font-size','30px');
+
+</script>
+</html>
