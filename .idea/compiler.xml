@@ -11,8 +11,9 @@
         <module name="jvmBoot" />
         <module name="eurekaProducer" />
         <module name="eurekaConsumer" />
-        <module name="eurekaServer" />
         <module name="cloud-api-commons" />
+        <module name="eurekaServer" />
+        <module name="vueBoot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="app">
+  {{messae}}
+    <br>
+    <span v-bind:title="messae">
+        鼠标选题会显示动态绑定的提示语
+    </span>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+  var vm=new Vue({
+    el:'#app',
+    data:{
+      messae:'hello,vue!'
+    }
+  })
+</script>
+</body>
+</html>
