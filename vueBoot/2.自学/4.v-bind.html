@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <style>
+        #p1 {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <span v-bind:title="message">我是span,v-bind:title表示放上来会有悬浮提示</span>
+    <p v-bind:id="p1">我是p</p>
+    <p id="p1">我是p1</p>
+    <button v-bind:disabled="flags">判断是否置灰</button>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: '我是提示语',
+            p1: 'red',
+            flags: true
+        }
+    })
+</script>
+</body>
+</html>

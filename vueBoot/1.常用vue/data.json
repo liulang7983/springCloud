@@ -1,0 +1,25 @@
+{
+  "name": "紫枫",
+  "url": "https://www.baidu.com",
+  "page": 1,
+  "isNonProfit": true,
+  "address": {
+    "street": "含光门",
+    "city": "西安",
+    "country": "中国"
+  },
+  "links": [
+    {
+      "name": "bilibili",
+      "url": "https//space.bilibili.com"
+    },
+    {
+      "name": "bilibili",
+      "url": "https//space.bilibili.com"
+    },
+    {
+      "name": "bilibili",
+      "url": "https//space.bilibili.com"
+    }
+  ]
+}

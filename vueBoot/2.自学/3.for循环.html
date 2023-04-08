@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for循环</title>
+</head>
+<body>
+<div id="app">
+  <li v-for="item in items">
+    {{item.messae}}
+  </li>
+  <hr>
+  <li v-for="(item,index) in items">
+    {{item.messae}}-{{index}}
+  </li>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      items:[
+        {messae: 'java'},
+        {messae: 'mysql'},
+        {messae: 'oracle'}
+      ]
+    }
+  })
+</script>
+</body>
+</html>

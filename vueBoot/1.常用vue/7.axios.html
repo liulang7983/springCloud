@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>axios</title>
+    <!--  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+    <script src="../vue/vue.min.js"></script>
+    <script src="../vue/axios.min.js"></script>
+<!--  v-clock解决闪烁问题，就是没渲染好的时候白屏  -->
+    <style>
+        [v-clock]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app" v-clock>
+    <p>{{info.name}}</p>
+    <div>{{info.address.street}}</div>
+    <a href="info.url" target="_blank">错误绑定</a>
+<!--    此时这个v-bind:href="info.url" 意思是把info.url属性替换成我们data的info.url-->
+    <a v-bind:href="info.url" target="_blank">正确绑定</a>
+</div>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        //data:vue的属性
+        //data(是一个方法,他表示取到的值return返回到data:里面去，然后底下的mounted()函数then把取到的值赋值给了info
+        data(){
+            return{
+                //定义请求的返回参数格式，可以理解为我们java的dto
+                info:{
+                    name:null,
+                    url:null,
+                    page:null,
+                    isNonProfit:null,
+                    address:{
+                        street:null,
+                        city:null,
+                        country:null
+                    },
+                    links:[]
+                }
+            }
+        },
+        mounted() {//钩子函数，链式编程 es6新特性
+            axios.get('data.json').then(response => (this.info=response.data));
+        }
+    })
+</script>
+
+</body>
+</html>

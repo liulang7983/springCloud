@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+</head>
+<body>
+<div id="app">
+<!--  双大括号仅仅是替换而已-->
+ <h1 >{{message}}</h1>
+<!--  v-html表示里面的样式替代我自己的标签span-->
+  <h2><span v-html="message"></span></h2>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      message: '<li>aa</li>'
+    }
+  })
+</script>
+</body>
+</html>

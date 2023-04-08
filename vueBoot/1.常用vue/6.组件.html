@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+<div id="app">
+    手写li：
+    <li v-for="item in items">{{item}}</li>
+    组件li:
+    <my-component v-for="item in items" v-bind:message="item"></my-component>
+<!--  此时使用的是下面定义的组件my-component，
+但是属性却是通过v-bind:message="item" 把我的item传给了message
+然后在my-component通过props: ['message']接收属性再放进去
+-->
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    Vue.component('my-component', {
+        props: ['message'],
+        template: '<li>{{message}}</li>'
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            items: ['java', 'oracle', 'mysql']
+        }
+    })
+</script>
+</body>
+</html>

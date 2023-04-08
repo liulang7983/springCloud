@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<div id="app">
+<button v-on:click="sayHI">点击</button>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            messae: '紫枫'
+        },
+        methods:{//方法必须定义在Vue的methods中(注意不是method)
+            sayHI:function (){
+                alert(this.messae)
+            }
+        }
+    })
+</script>
+</body>
+</html>

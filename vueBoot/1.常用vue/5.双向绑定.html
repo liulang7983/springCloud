@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+</head>
+<body>
+<div id="app">
+    <!--    此时输入框的值会再后面输出-->
+    输入文本:<input type="text" v-model="messae">{{messae}}
+    <br>
+    <!--    此时绑定的是性别选择，选中的值绑定到了sex上-->
+    性别:<input type="radio" name="sex" value="男" v-model="sex">男
+    <input type="radio" name="sex" value="女" v-model="sex">女
+    <p>选中的性别:{{sex}}</p>
+    下拉框:<select v-model="selected">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <p>下拉框选中:{{selected}}</p>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            messae: '紫枫',
+            sex: '',
+            selected: ''
+        },
+        methods: {//方法必须定义在Vue的methods中(注意不是method)
+            sayHI: function () {
+                alert(this.messae)
+            }
+        }
+    })
+</script>
+</body>
+</html>
