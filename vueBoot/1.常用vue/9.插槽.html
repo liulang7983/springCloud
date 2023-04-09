@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽</title>
+</head>
+<body>
+<div id="app">
+    <p>列表</p>
+    <ul>
+        <li>java</li>
+        <li>php</li>
+        <li>c</li>
+    </ul>
+    <hr>
+<!--
+此时是模版todo里面预留了两个插槽slot，
+然后todo-title和todo-item两个组件分别通过slot属性和todo里面的<slot></slot>name属性绑定数具体替代谁
+:mytitle="title"属性的意思是我组件todo-title里面的props: ['mytitle']属性和data的title属性绑定，
+意思就是我我组件todo-title的属性mytitle取data里面的title绑定
+-->
+    <todo>
+        <todo-title slot="todo-title1" :mytitle="title"></todo-title>
+        <todo-item slot="todo-item1" v-for="item in items" :litiem="item"></todo-item>
+    </todo>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    Vue.component('todo', {
+        template: '<div>\
+              <slot name="todo-title1"></slot>\
+              <ul>\
+                <slot name="todo-item1"></slot>\
+              </ul>\
+            </div>'
+    });
+    Vue.component('todo-title', {
+        props: ['mytitle'],
+        template: '<div>{{mytitle}}</div>'
+    });
+    Vue.component('todo-item', {
+        props: ['litiem'],
+        template: '<li>{{litiem}}</li>'
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            title: '紫枫1',
+            messae: 'hello,vue!',
+            items: ['java', 'php', 'mysql']
+        }
+    })
+</script>
+</body>
+</html>

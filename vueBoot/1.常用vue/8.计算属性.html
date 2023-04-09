@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+</head>
+<body>
+<div id="app">
+<!--    调用方法需要带()，而计算属性不需要，我们可以让安慰计算属性里面的方法名是data:里面的key,方法的返回值为value-->
+    <P>currentTime {{currentTime()}}</P>
+    <P>currentTime1 {{currentTime1}}</P>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello,vue!'
+        },
+        methods: {//方法
+            currentTime: function () {
+                return Date.now();
+            }
+        },
+        computed: {//计算属性
+            currentTime1: function () {
+                return Date.now();
+            }
+        }
+    })
+</script>
+</body>
+</html>

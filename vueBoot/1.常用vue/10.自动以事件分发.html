@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动以事件分发</title>
+</head>
+<body>
+<div id="app">
+  <!--
+  此时是模版todo里面预留了两个插槽slot，
+  然后todo-title和todo-item两个组件分别通过slot属性和todo里面的<slot></slot>name属性绑定数具体替代谁
+  :mytitle="title"属性的意思是我组件todo-title里面的props: ['mytitle']属性和data的title属性绑定，
+  意思就是我我组件todo-title的属性mytitle取data里面的title绑定
+  -->
+  <todo>
+    <todo-title slot="todo-title1" :mytitle="title"></todo-title>
+<!--
+通过v-bind把items的属性和todo-item 组件里的props: ['litiem','liindex']属性绑定
+然后通过v-on:remove1="itemRemove(index)"把Vue里面的方法绑定到了组件中
+通过在方法中的this.$emit('remove1',index);绑定了外部的remove1方法及参数
+此时就可以在里面通过@click="remove(liindex)"点击事件实现调用外部Vue的itemRemove(index)方法,实现了组件删除Vue的里面的属性
+注；此时必须是v-on:remove1或者@remove1，如果是:remove1会直接删掉
+-->
+    <todo-item slot="todo-item1" v-for="(item,index) in items" :litiem="item" :liindex="index" v-on:remove1="itemRemove(index)"></todo-item>
+  </todo>
+</div>
+
+
+<script src="../vue/vue.min.js"></script>
+<script>
+  Vue.component('todo', {
+    template: '<div>\
+              <slot name="todo-title1"></slot>\
+              <ul>\
+                <slot name="todo-item1"></slot>\
+              </ul>\
+            </div>'
+  });
+  Vue.component('todo-title', {
+    props: ['mytitle'],
+    template: '<div>{{mytitle}}</div>'
+  });
+  Vue.component('todo-item', {
+    props: ['litiem','liindex'],
+    template: '<li>{{liindex}}->{{litiem}}<button @click="remove(liindex)">删除</button></li>',
+    methods:{
+      remove:function (index){
+        //alert('s'+index);
+        this.$emit('remove1',index);
+      }
+    }
+  });
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      title: '紫枫1',
+      messae: 'hello,vue!',
+      items: ['java', 'php', 'mysql']
+    },
+    methods: {
+      itemRemove:function (index){
+        console.log('删除'+this.items[index]);
+        this.items.splice(index,1);
+      }
+    }
+  })
+</script>
+</body>
+</html>
