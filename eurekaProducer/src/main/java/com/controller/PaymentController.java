@@ -3,6 +3,7 @@ package com.controller;
 import bean.CommonResult;
 import bean.Payment;
 import com.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/producer")
+@Slf4j
 public class PaymentController {
 
     @Autowired
@@ -46,7 +48,8 @@ public class PaymentController {
     @RequestMapping("/getIdInt")
         public CommonResult getIdInt(){
         System.out.println("进入producer/getId");
-        Payment payment = paymentService.getId(null);
+        log.info("进入producer/getId");
+        Payment payment = paymentService.getId(2L);
         return new CommonResult(200, "查询成功", payment);
     }
 

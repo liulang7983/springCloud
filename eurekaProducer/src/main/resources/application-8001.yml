@@ -17,7 +17,16 @@ spring:
     url: jdbc:mysql://172.18.26.250:3306/jarvis_dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=false&rewriteBatchedStatements=true&serverTimezone=GMT%2B8
     username: root
     password: focr123
+    druid:
+      max-active: 20
 #mybatis:配置
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.bean    # 所有pojo别名类所在包
+
+
+logging:
+  level:
+    com:
+      dao: DEBUG
+
